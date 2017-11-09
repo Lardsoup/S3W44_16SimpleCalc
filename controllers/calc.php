@@ -5,16 +5,54 @@ $choice = $_REQUEST["choice"];
 
 $result = 0;
 
-switch($choice)
+//forsøg på class stuff
+/*
+$calca = new calculator($x, $y);
+$result = choice($choice, $calca);
+*/
+
+$result = calculate($x, $y, $choice);
+
+//forsøg på class stuff
+/*
+function choice($choice, $calca)
 {
-    case"add": $result = $x + $y;
-        break;
-    case"sub": $result = $x - $y;
-        break;
-    case"multi": $result = $x * $y;
-        break;
-    case"div": $result = $x / $y;
-        break;
+    switch ($choice)
+    {
+        case"add":
+            return $calca->add;
+            break;
+        case"sub":
+            return $x - $y;
+            break;
+        case"multi":
+            return $x * $y;
+            break;
+        case"div":
+            return $x / $y;
+            break;
+        default: return -1;
+    }
+}
+*/
+
+function calculate($x, $y, $choice)
+{
+    switch ($choice) {
+        case"add":
+            return $x + $y;
+            break;
+        case"sub":
+            return $x - $y;
+            break;
+        case"multi":
+            return $x * $y;
+            break;
+        case"div":
+            return $x / $y;
+            break;
+        default: return -1;
+    }
 }
 
 require_once '../vendor/autoload.php';
